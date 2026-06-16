@@ -6,7 +6,7 @@ const Categories = () => {
   const categories = use(categoriesPromise);
 
   return (
-    <div>
+    <div className="">
       <h2 className="font-bold">All Categories ({categories.length})</h2>
       <div className="grid gird-cols-1 mt-5 gap-y-3">
         {categories.map((category) => (
