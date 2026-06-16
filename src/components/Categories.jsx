@@ -1,7 +1,8 @@
 import { use } from "react";
 import { NavLink } from "react-router";
 
-const categoriesPromise = fetch("/categories.json").then((res) => res.json());
+const categoriesPromise = fetch("/categories.json")
+  .then((res) => res.json());
 const Categories = () => {
   const categories = use(categoriesPromise);
 
@@ -13,8 +14,7 @@ const Categories = () => {
           <NavLink
             key={category.id}
             className={({ isActive }) =>
-              `btn border-0 font-semibold ${
-                isActive ? "bg-base-200" : "bg-base-100 hover:bg-base-200"
+              `btn border-0 font-semibold ${isActive ? "bg-gray-300" : "bg-base-100 hover:bg-gray-300"
               }`
             }
             to={`/category/${category.id}`}
